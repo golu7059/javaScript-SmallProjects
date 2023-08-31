@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Word Highlighter</title>
+<style>
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  .highlight {
+    background-color: yellow;
+  }
+  body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #paragraph{
+    width: 69vw;
+  }
+</style>
+</head>
+<body>
+<p id="paragraph">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula mauris id lacus ultrices, sit amet maximus
+  nisl vestibulum. Aenean vestibulum nisl vel metus gravida feugiat. Curabitur sed libero eget mi convallis
+  tincidunt. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+  Curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec
+  tristique arcu in ex tristique, vel aliquet justo interdum.
+</p>
+
+<script>
+const paragraph = document.getElementById("paragraph");
+const words = paragraph.textContent.split(" ");
+
+for (let i = 0; i < words.length; i++) {
+  const word = words[i];
+  if (word.length > 8) {
+    const span = document.createElement("span");
+    span.textContent = word;
+    span.classList.add("highlight");
+    words[i] = span.outerHTML;
+  }
+}
+
+paragraph.innerHTML = words.join(" ");
+</script>
+</body>
+</html>

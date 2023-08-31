@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-do-app</title>
+
+    <!-- adding css to the page  -->
+    <style>
+        body div {
+            height: 30vw;
+            width: 40vw;
+            margin: 10vw 0 0 27vw ;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #b0bed0;
+            border-radius: 12px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;   
+        }
+        input{
+            border-radius: 5px;
+        }
+        button {
+            cursor: pointer;
+            margin-top: 10px;
+            height: 35px;
+            width: 75px;
+            font-weight: 550;
+            font-size: 15px;
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>to-do-app</h3>
+    <input type="text" id="todoInput" placeholder="Enter a new to-do" >
+    <button id="addButton">Add</button>
+
+    <ul id="todoList"></ul>
+    </div>
+    <script>
+       const todoInput = document.getElementById('todoInput');
+       const addButton = document.getElementById('addButton');
+       const todoList = document.getElementById('todoList');
+
+       addButton.addEventListener('click', ()=>{
+        const todoText = todoInput.value.trim();
+
+        if(todoText != ""){
+            const newTodo = document.createElement("li");
+            newTodo.textContent = todoText;
+            todoList.appendChild(newTodo);
+            todoInput.value = " ";
+        }
+       })
+    </script>
+
+</body>
+</html>

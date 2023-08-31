@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Mover</title>
+<style>
+  body {
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  div{
+    width: 70vw;
+  }
+  /* #image {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    transition: transform 0.1s ease;
+  } */
+  img{
+    position: absolute;
+    height: 120px;
+    width: 80px;
+    transition: transform 0.1s ease;
+  }
+</style>
+</head>
+<body>
+<div id="image">
+     <img src="https://www.freepnglogos.com/uploads/marvel-png/image-wolverine-marvel-marvel-avengers-15.png" alt="marvel-hero-png">
+</div>
+
+<script>
+    const image = document.getElementById("image");
+let x = 0;
+let y = 0;
+const stepSize = 10;
+
+document.addEventListener("keydown", (event) => {
+  switch (event.key) {
+    case "ArrowUp":
+      y -= stepSize;
+      break;
+    case "ArrowDown":
+      y += stepSize;
+      break;
+    case "ArrowLeft":
+      x -= stepSize;
+      break;
+    case "ArrowRight":
+      x += stepSize;
+      break;
+  }
+  
+   
+    image.style.transform = `translate(${x}px, ${y}px)`;
+});
+
+</script>
+</body>
+</html>

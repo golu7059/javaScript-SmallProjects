@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change text</title>
+
+    <!-- css -->
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+             
+        }
+        .container{
+            height: 30vw;
+            width: 40vw;
+            margin: 10vw 0 0 25vw;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             justify-content: center;
+             background-color: #786666;
+             gap: 11vw;
+             overflow: hidden;
+             border-radius: 12px;
+             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        button{
+            height: 50px;
+            width: 80px;
+            color: black;
+            font-weight: 550;
+            border-radius: 12px;
+            cursor: pointer;
+            transform: scale(1.3);
+        }
+    </style>
+</head>
+<body>
+     <div class="container">
+        <h3 id="heading">The most affordable learning platform</h3>
+     <button id="toggleButton">click me</button>
+     </div>
+
+
+     <!-- java script  -->
+    <script>
+        const heading = document.getElementById('heading');
+        const toggleButton = document.getElementById('toggleButton');
+        toggleButton.addEventListener('click', () => {
+             if(heading.textContent === "The most affordable learning platform"){
+                heading.textContent = "PW skills";
+             }  else {
+                heading.textContent = "The most affordable learning platform";
+            }
+        })
+    </script>
+</body>
+</html>
